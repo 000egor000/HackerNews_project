@@ -8,6 +8,7 @@ import Comments from '../../components/Comments/Comments'
 
 const StoryID = ({ storyId }) => {
   const [data, setData] = useState({})
+
   const { id } = useParams()
   const navigate = useNavigate()
 

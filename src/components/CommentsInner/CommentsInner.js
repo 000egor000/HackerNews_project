@@ -3,13 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { getComment } from '../../api/api'
 import Comments from '../Comments/Comments'
 
-const CommentsInner = ({
-  dataId,
-  //  setDataInnerProp
-}) => {
+const CommentsInner = ({ dataId }) => {
   const [data, setData] = useState({})
-  let [dataInner, setDataInner] = useState([])
-  const [dropShow, setDropShow] = useState(false)
 
   const getCommentFunc = () => {
     getComment(dataId).then((items) => setData(items))
@@ -24,7 +19,8 @@ const CommentsInner = ({
   }
 
   return (
-    data.id && (
+    data.id &&
+    !(data.deleted || data.dead) && (
       <>
         <div
           className="itemCom"

@@ -3,12 +3,13 @@
   margin: 10px 0;
   .firstItem,
   .secondItem {
+    width: 100%;
     display: flex;
     align-items: baseline;
     justify-content: space-between;
 
     cursor: pointer;
-
+    padding: 10px;
     .content {
       text-align: center;
       padding: 0 20px;
@@ -30,19 +31,6 @@
       justify-content: center;
       align-items: center;
       color: #fff;
-    }
-  }
-
-  .secondItem {
-    flex-direction: column;
-    .itemCom {
-      margin: 10px 0;
-      display: flex;
-      align-items: baseline;
-      justify-content: space-around;
-
-      padding: 10px;
-      background-color: rgb(244, 211, 211);
     }
   }
 }
