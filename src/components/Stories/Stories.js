@@ -1,8 +1,8 @@
 import './Stories.scss'
 
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Story from '../Story/Story'
-import { getStories, getStory } from '../../api/api'
+import { getStories } from '../../api/api'
 
 import { arraySlice } from '../../helper.js'
 const Stories = () => {

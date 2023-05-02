@@ -1,16 +1,14 @@
 import './StoryID.scss'
 
-import React, { useCallback, useEffect, useState } from 'react'
-// import { Story } from './Story'
-import { getStories, getStory, getComment } from '../../api/api'
-import { Link, useNavigate } from 'react-router-dom'
-import { useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+
+import { getStory } from '../../api/api'
+import { useNavigate, useParams } from 'react-router-dom'
 import Comments from '../../components/Comments/Comments'
 
 const StoryID = ({ storyId }) => {
   const [data, setData] = useState({})
   const { id } = useParams()
-  const [dropShow, setDropShow] = useState([])
   const navigate = useNavigate()
 
   const getData = () => getStory(id).then((items) => setData(items))

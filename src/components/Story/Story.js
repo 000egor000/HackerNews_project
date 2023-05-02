@@ -1,8 +1,8 @@
 import './Story.scss'
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-import { getStories, getStory } from '../../api/api'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { getStory } from '../../api/api'
+import { Link } from 'react-router-dom'
 
 const Story = ({ storyId }) => {
   const [dataNews, setDataNews] = useState({})
@@ -16,13 +16,22 @@ const Story = ({ storyId }) => {
       <td>
         <Link to={`story/${dataNews.id}`}>{dataNews.title}</Link>
       </td>
-      <td>{dataNews.score}</td>
-      <td>{dataNews.by}</td>
-      <td>{dataNews.time}</td>
       <td>
-        {dataNews.hasOwnProperty('kids') && dataNews.kids.length > 0
-          ? dataNews.kids.length
-          : 0}
+        <Link to={`story/${dataNews.id}`}>{dataNews.score}</Link>
+      </td>
+      <td>
+        <Link to={`story/${dataNews.id}`}>{dataNews.by}</Link>
+      </td>
+      <td>
+        <Link to={`story/${dataNews.id}`}>{dataNews.time}</Link>
+      </td>
+      <td>
+        <Link to={`story/${dataNews.id}`}>
+          {' '}
+          {dataNews.hasOwnProperty('kids') && dataNews.kids.length > 0
+            ? dataNews.kids.length
+            : 0}
+        </Link>
       </td>
     </tr>
   )
